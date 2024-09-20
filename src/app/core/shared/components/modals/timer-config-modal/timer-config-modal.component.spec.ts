@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalAutofocusComponent } from './modal-autofocus.component';
+import { TimerConfigModalComponent } from './timer-config-modal.component';
 
 describe('ModalAutofocusComponent', () => {
-  let component: ModalAutofocusComponent;
-  let fixture: ComponentFixture<ModalAutofocusComponent>;
+  let component: TimerConfigModalComponent;
+  let fixture: ComponentFixture<TimerConfigModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ModalAutofocusComponent ]
+      declarations: [ TimerConfigModalComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ModalAutofocusComponent);
+    fixture = TestBed.createComponent(TimerConfigModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
