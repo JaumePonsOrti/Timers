@@ -33,6 +33,7 @@ export class ModalConfigComponent {
   selectedTimerPalette: any;
   selectedMenuPalette: any;
   //selectedModalPalette: any;
+  selectedButtonPalette: any;
 
   constructor(public activeModal: NgbActiveModal) {}
 
@@ -42,6 +43,7 @@ export class ModalConfigComponent {
       theme: this.selectedTheme,
       timerPalette: this.selectedTimerPalette,
       menuPalette: this.selectedMenuPalette,
+      buttonPalette: this.selectedButtonPalette
      // modalPalette: this.selectedModalPalette
     });
   }

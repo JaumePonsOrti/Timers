@@ -1,8 +1,5 @@
 <div class="modal-header">
   <h4 class="modal-title">Configuración del Timer</h4>
-  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-    <span aria-hidden="true">×</span>
-  </button>
 </div>
 <div class="modal-body">
   <div class="form-group">
@@ -18,8 +15,14 @@
     </select>
   </div>
   <div class="form-group">
-    <label for="menuPaletteSelect">Paleta de Color del Menú y Botones</label>
+    <label for="menuPaletteSelect">Paleta de Color del Menú y sus elementos </label>
     <select id="menuPaletteSelect" class="form-control" [(ngModel)]="selectedMenuPalette">
+      <option *ngFor="let palette of palettes" [ngValue]="palette">{{ palette.label }}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="menuPaletteSelect">Paleta de Color de los Botones</label>
+    <select id="menuPaletteSelect" class="form-control" [(ngModel)]="selectedButtonPalette">
       <option *ngFor="let palette of palettes" [ngValue]="palette">{{ palette.label }}</option>
     </select>
   </div>
