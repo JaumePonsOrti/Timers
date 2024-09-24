@@ -23,6 +23,10 @@ export class ConfigService {
     {
         "label":"Default", 
         "class":"default"    
+    },
+    "buttonPalette":{
+        "label":"Midnight Light",
+        "class":"midnight-light"
     }
   }
 
@@ -44,6 +48,9 @@ export class ConfigService {
     if (this.config.theme == undefined) {
         this.config.theme = this.defaultConfig.theme;
     }
+    if (this.config.buttonPalette == undefined) {
+        this.config.buttonPalette = this.defaultConfig.buttonPalette;
+    }
     return this.config;
   }
 
@@ -60,6 +67,10 @@ export class ConfigService {
     if (o.theme == undefined) {
         o.theme = this.config.theme ?? this.defaultConfig.theme;
     }
+    if (o.buttonPalette == undefined) {
+        o.buttonPalette = this.config.buttonPalette ?? this.defaultConfig.buttonPalette;
+    }
+
 
     this.config = o;
     localStorage.setItem("global",JSON.stringify(o));

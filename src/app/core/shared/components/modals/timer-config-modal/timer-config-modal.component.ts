@@ -16,4 +16,8 @@ export class TimerConfigModalComponent implements OnInit {
   constructor(public modal: NgbActiveModal) {}
 
   ngOnInit(): void {}
+
+  saveSettings() {
+    this.modal.close({ nombre: this.formControl.value});
+  }
 }

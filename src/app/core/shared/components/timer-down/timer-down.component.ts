@@ -116,7 +116,8 @@ export class TimerDownComponent implements OnInit {
     modal.closed.subscribe((closed: any) => {
       //console.log('CLOSED modal:', closed);
       if (closed != null) {
-        this.configTimer.nombre = closed;
+        this.configTimer.nombre = closed.nombre;
+        
         this.storageService.saveTemporizadores();
       }
     });
