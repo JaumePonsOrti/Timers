@@ -1,0 +1,60 @@
+//Diferenciamos los colores por paletas, los nombres de estas son mios
+//Paleta "Luz de medianoche | midnight-light"
+$midnight-light-primary: #d9a74a;
+$midnight-light-background: #313b3f;
+$midnight-light-icons: #ffffff;
+$midnight-light-shadow: #00000040;
+
+// Paleta "Emerald Whisper"
+$emerald-whisper-primary: #50c878;
+$emerald-whisper-background: #006400;
+$emerald-whisper-icons: #f8f8ff;
+$emerald-whisper-shadow: #d3d3d3;
+
+// Paleta "Sapphire Dream"
+$sapphire-dream-primary: #0f52ba;
+$sapphire-dream-background: #000080;
+$sapphire-dream-icons: #fffafa;
+$sapphire-dream-shadow: #c0c0c0;
+
+// Paleta "Crimson Velvet"
+$crimson-velvet-background: #800020;
+$crimson-velvet-primary: #dc143c;
+$crimson-velvet-icons: #fffff0;
+$crimson-velvet-shadow: #ffd700;
+
+// Paleta "Amethyst Glow"
+$amethyst-glow-background: #e6e6fa;
+$amethyst-glow-primary: #9966cc;
+$amethyst-glow-icons: #ffffff;
+$amethyst-glow-shadow: #c0c0c0;
+
+// Paleta "Ivory Elegance"
+$ivory-elegance-background: #f5f5dc;
+$ivory-elegance-primary: #fffff0;
+$ivory-elegance-icons: #eee8aa;
+$ivory-elegance-shadow: #d3d3d3;
+
+// Paleta "Royal Indigo"
+$royal-indigo-background: #00008b;
+$royal-indigo-primary: complement($royal-indigo-background);
+$royal-indigo-icons: #ffffff;
+$royal-indigo-shadow: #2a1f1f;
+
+// Paleta "Golden Sand"
+$golden-sand-background: #a52a2a;
+$golden-sand-primary: #daa520;
+$golden-sand-icons: #f8f8ff;
+$golden-sand-shadow: #ffd700;
+
+// Paleta "Mystic Forest"
+$mystic-forest-primary: #228b22;
+$mystic-forest-background: #8a9a5b;
+$mystic-forest-icons: #fffff0;
+$mystic-forest-shadow: #d4af37;
+
+// Paleta "Ocean Breeze"
+$ocean-breeze-primary: #0077be;
+$ocean-breeze-background: #40e0d0;
+$ocean-breeze-icons: #ffffff;
+$ocean-breeze-shadow: #d3d3d3;

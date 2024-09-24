@@ -1,16 +1,16 @@
-<app-menu-home></app-menu-home>
+<app-menu-home [palette]="config.getConfig().menuPalette.class"></app-menu-home>
 <p *ngFor="let alert of alerts">
     <ngb-alert [type]="alert.type" (closed)="close(alert)">{{ alert.message }}</ngb-alert>
 </p>
 
 <cdk-virtual-scroll-viewport itemSize="100" class="scroll">
-    <app-timer-down *ngFor="let configTimer of timmerService.getTimmers() " [configTimer]="configTimer">
+    <app-timer-down *ngFor="let configTimer of timmerService.getTimmers() " [configTimer]="configTimer" [type]="config.getConfig().theme.class" [palette]="config.getConfig().timerPalette.class">
     </app-timer-down>
 </cdk-virtual-scroll-viewport>
 
 
 <div class="position-absolute bottom-0 start-50 translate-middle-x">
-    <div class="count-down-timer" (click)="createTimer()">
+    <div class="count-down-timer" (click)="createTimer()" [ngClass]="config.getConfig().menuPalette.class">
         Añadir otro Temporizador
     </div>
     <footer class="text-center">Version 1.0.0 </footer>

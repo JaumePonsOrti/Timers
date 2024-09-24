@@ -65,4 +65,9 @@ $yellow:#d9a74a;
     --bs-btn-active-color: var(--bs-btn-hover-color);
     --bs-btn-active-bg: #{shade-color($yellow, 20%)};
     --bs-btn-active-border-color: #{shade-color($yellow, 20%)};
-  }
+}
+
+.btn-background-actived{
+	--bs-btn-bg: #fff;
+	padding: 0 25px 0 25px;
+}

@@ -11,12 +11,14 @@ export class ConfigTimmerModel implements IConfigTimmer,IConfigTimmerStored{
     classSelected:string = "d-none";
     position!:number;
     nombre!:string;
+
     //Constructor
     constructor(targetTime: any = 5,position: number=0, nombre:string="Nombre temporizador") {
         this.targetTime = targetTime - 1;
         this.position = position;
         this.nombre = nombre;
     }
+    
     status: string = 'stop';
 
     playTimmer(time: any) {

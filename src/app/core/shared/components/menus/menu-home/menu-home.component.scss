@@ -1,3 +1,12 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+@import "../../../../../colors.scss";
+
+
+
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -6,9 +15,6 @@
     user-select: none;
 }
 
-.text-bg-dark{
-  background: #313b3f!important;
-}
 
 @media (min-width: 768px) {
     .bd-placeholder-img-lg {
@@ -69,3 +75,71 @@
 .dropdown-toggle {
     outline: 0;
 }
+
+
+
+@mixin palette($primary, $background, $icons, $shadow) {
+    background-color: $primary !important;
+    color: $background !important;
+
+    $blacnes :  darken($primary, 55%);
+    .text-secondary{
+        color:  $blacnes !important;
+    }
+  }
+  
+  @mixin shadow($shadow) {
+    box-shadow: 2px 6px 9px 2px $shadow;
+  }
+  
+  
+  .midnight-light {
+    @include palette($midnight-light-primary, $midnight-light-background, $midnight-light-icons, $midnight-light-shadow);
+    @include shadow($midnight-light-shadow);
+  }
+  
+  .emerald-whisper {
+    @include palette($emerald-whisper-primary, $emerald-whisper-background, $emerald-whisper-icons, $emerald-whisper-shadow);
+    @include shadow($emerald-whisper-shadow);
+  }
+  
+  .sapphire-dream {
+    @include palette($sapphire-dream-primary, $sapphire-dream-background, $sapphire-dream-icons, $sapphire-dream-shadow);
+    @include shadow($sapphire-dream-shadow);
+  }
+  
+  .crimson-velvet {
+    @include palette($crimson-velvet-primary, $crimson-velvet-background, $crimson-velvet-icons, $crimson-velvet-shadow);
+    @include shadow($crimson-velvet-shadow);
+  }
+  
+  .amethyst-glow {
+    @include palette($amethyst-glow-primary, $amethyst-glow-background, $amethyst-glow-icons, $amethyst-glow-shadow);
+    @include shadow($amethyst-glow-shadow);
+  }
+  
+  .ivory-elegance {
+    @include palette($ivory-elegance-primary, $ivory-elegance-background, $ivory-elegance-icons, $ivory-elegance-shadow);
+    @include shadow($ivory-elegance-shadow);
+  }
+  
+  .royal-indigo {
+    @include palette($royal-indigo-primary, $royal-indigo-background, $royal-indigo-icons, $royal-indigo-shadow);
+    @include shadow($royal-indigo-shadow);
+  }
+  
+  .golden-sand {
+    @include palette($golden-sand-primary, $golden-sand-background, $golden-sand-icons, $golden-sand-shadow);
+    @include shadow($golden-sand-shadow);
+  }
+  
+  .mystic-forest {
+    @include palette($mystic-forest-primary, $mystic-forest-background, $mystic-forest-icons, $mystic-forest-shadow);
+    @include shadow($mystic-forest-shadow);
+  }
+  
+  .ocean-breeze {
+    @include palette($ocean-breeze-primary, $ocean-breeze-background, $ocean-breeze-icons, $ocean-breeze-shadow);
+    @include shadow($ocean-breeze-shadow);
+  }
+  

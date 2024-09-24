@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from './core/shared/shared.module';
 import { TimerService } from './core/shared/services/timer.service';
 import { StorageService } from './core/shared/services/storage/storage.service';
+import { ConfigService } from './core/shared/services/config/config.service';
 
 interface Alert {
   type: string,
@@ -44,7 +45,8 @@ export class AppComponent {
   constructor(
     public timmerService: TimerService,
     private storageService: StorageService,
-    private renderer2: Renderer2
+    private renderer2: Renderer2,
+    public config:ConfigService
   ) { }
   keys: string[] = ["", ""];
   position = 0;

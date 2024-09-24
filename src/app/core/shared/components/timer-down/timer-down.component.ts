@@ -5,21 +5,34 @@ import { ConfigTimmerModel } from '../../model/ConfigTimmerModel';
 import { ITime } from '../../model/Interfaces/ITime';
 import { StorageService } from '../../services/storage/storage.service';
 import { TimerService } from '../../services/timer.service';
-import { ModalAutofocusComponent } from '../modal-autofocus/modal-autofocus.component';
+import { TimerConfigModalComponent } from '../modals/timer-config-modal/timer-config-modal.component';
+import { ModalConfigComponent } from '../modals/modal-config/modal-config.component';
 
 @Component({
   selector: 'app-timer-down',
   templateUrl: './timer-down.component.html',
   styleUrls: ['./timer-down.component.scss']
 })
-export class TimerDownComponent {
+export class TimerDownComponent implements OnInit {
   @Input() public configTimer: ConfigTimmerModel = new ConfigTimmerModel();
   @Output() finalizado = new EventEmitter<boolean>;
+  @Input() public type: string = "default";
+  @Input() public palette: string = "midnight-light";
+  @Input() public oppenControllers: string = "default-controllers-openned";
+
+  public active_button_background:string = "";
+
   constructor(
     private _modalService: NgbModal,
     public timmerService: TimerService,
     private storageService: StorageService
   ) { }
+
+  ngOnInit(): void {
+    if(this.type === "strambothic_theme"){
+      this.active_button_background = "btn-background-actived";
+    }
+  }
 
   tiempo: any = 0;
   segundosConfigurables = true;
@@ -119,6 +132,8 @@ export class TimerDownComponent {
   }
 
 }
+
 const MODALS: { [name: string]: Type<any> } = {
-  autofocus: ModalAutofocusComponent,
+  autofocus: TimerConfigModalComponent,
+  general_config: ModalConfigComponent
 };

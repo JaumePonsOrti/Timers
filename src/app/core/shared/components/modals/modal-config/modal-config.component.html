@@ -1,0 +1,39 @@
+<div class="modal-header">
+  <h4 class="modal-title">Configuración del Timer</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">×</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="form-group">
+    <label for="themeSelect">Tema del timer</label>
+    <select id="themeSelect" class="form-control" [(ngModel)]="selectedTheme">
+      <option *ngFor="let theme of themes" [ngValue]="theme">{{ theme.label }}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="timerPaletteSelect">Paleta de Color del Timer</label>
+    <select id="timerPaletteSelect" class="form-control" [(ngModel)]="selectedTimerPalette">
+      <option *ngFor="let palette of palettes" [ngValue]="palette">{{ palette.label }}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="menuPaletteSelect">Paleta de Color del Menú y Botones</label>
+    <select id="menuPaletteSelect" class="form-control" [(ngModel)]="selectedMenuPalette">
+      <option *ngFor="let palette of palettes" [ngValue]="palette">{{ palette.label }}</option>
+    </select>
+  </div>
+  <!-- 
+  <div class="form-group">
+    <label for="modalPaletteSelect">Paleta de Color de los Modales</label>
+    <select id="modalPaletteSelect" class="form-control" [(ngModel)]="selectedModalPalette">
+      <option *ngFor="let palette of palettes" [ngValue]="palette">{{ palette.label }}</option>
+    </select>
+  </div>
+  -->
+  
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss('cancel click')">Cancelar</button>
+  <button type="button" class="btn btn-primary" (click)="saveSettings()">Guardar</button>
+</div>

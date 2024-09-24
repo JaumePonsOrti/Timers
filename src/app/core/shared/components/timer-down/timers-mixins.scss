@@ -1,0 +1,113 @@
+
+@mixin select($primary, $background, $icons, $shadow) {
+  $color-contrast: color-contrast($background);
+  background-color: $primary;
+
+  span {
+    i {
+      background-color: color-contrast($color-contrast);
+      $color: $color-contrast;
+      color: $color;
+    }
+  }  
+}
+
+//mixin palete
+@mixin palette($primary, $background, $icons, $shadow) {
+  background-color: $background;
+  color: $primary;
+  
+  .selected, .d-none {
+    @include select($primary, $background, $icons, $shadow);
+    
+  }
+  
+
+}
+
+
+@mixin shadow($shadow) {
+  box-shadow: 2px 6px 9px 2px $shadow;
+}
+
+@mixin plantilla(
+  $text-align, $max-width, $margin, $border-radius, $padding, $font-family,
+  $margin-p,$padding-p, $grid-template-columns, $grid-column-gap, $margin-description,
+  $font-description, $letter-spacing, $position, $margin-times, $font-times,
+  $img-width, $img-height, $box-shadow, $font-size, $padding-span,
+  $border-radius-span, $margin-left-span, $media-max-width, $media-margin,
+  $margin-left-ml, $font-size-hover, $select-box-shadow, $select-margin,
+  $select-padding, $span-i-font-size, $i-padding, $border-radius-i
+) {
+ 
+    text-align: $text-align;
+    max-width: $max-width;
+    margin: $margin;
+    border-radius: $border-radius;
+    padding: $padding;
+    font-family: $font-family;
+
+    > p {
+      margin: $margin-p;
+      padding: $padding-p;
+    }
+
+    .wrapper {
+    .description,
+      .times {
+        display: grid;
+        grid-template-columns: $grid-template-columns;
+        grid-column-gap: $grid-column-gap;
+      }
+
+    .description {
+      margin: $margin-description;
+      > p {
+
+        font: $font-description;
+      }
+    }
+
+    .description1 {
+      @extend .description;
+      grid-template-columns: $grid-template-columns;
+    }
+
+    .times {
+      p{
+        letter-spacing: $letter-spacing;
+        position: $position;
+        margin: $margin-times;
+        font: $font-times;
+
+        ::ng-deep img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: $img-width;
+          display: block;
+          height: $img-height;
+        }
+      }
+    }
+  }
+
+  .selected, .d-none {
+    box-shadow: $select-box-shadow;
+    margin: $select-margin;
+    padding: $select-padding;
+   
+    span {
+      i {
+        font-size: $span-i-font-size;
+        padding: $i-padding;
+        border-radius: $border-radius-i;
+  
+        &.ml {
+          margin-left: 1em;
+        }
+      }
+    }  
+  }
+}

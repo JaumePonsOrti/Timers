@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ITime } from '../../model/Interfaces/ITime';
 
@@ -25,7 +25,9 @@ export class TimerPickerComponent implements OnInit {
   segundosStep: number = 1;
   tiempoAContar: number = 0;
 
- @Output() salida:EventEmitter<ITime> = new EventEmitter<ITime>();
+  @Input() public active_button_background:string = "";
+  @Output() salida:EventEmitter<ITime> = new EventEmitter<ITime>();
+  
   ngOnInit(): void {
     this.inputH.valueChanges.subscribe((x:any)=>{
       console.log("HourC:",x);

@@ -3,91 +3,173 @@
 @import "bootstrap/scss/maps";
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/utilities";
+@import "../../../../colors.scss";
+@import "./timers-mixins.scss";
 
-.count-down-timer {
-  box-shadow: 2px 6px 9px 2px rgb(0 0 0 / 20%);
-  text-align: center;
-  background-color: #313b3f;
-  max-width: 300px;
-  margin: 20px auto;
-  color: #d9a74a;
-  border-radius: 6px;
-  padding: 10px;
-  font-family: sans-serif;
 
-  > p {
-    margin: 5px 0 15px 0;
+
+.midnight-light {
+  @include palette($midnight-light-primary, $midnight-light-background, $midnight-light-icons, $midnight-light-shadow);
+  @include shadow($midnight-light-shadow);
+}
+
+.emerald-whisper {
+  @include palette($emerald-whisper-primary, $emerald-whisper-background, $emerald-whisper-icons, $emerald-whisper-shadow);
+  @include shadow($emerald-whisper-shadow);
+}
+
+.sapphire-dream {
+  @include palette($sapphire-dream-primary, $sapphire-dream-background, $sapphire-dream-icons, $sapphire-dream-shadow);
+  @include shadow($sapphire-dream-shadow);
+}
+
+.crimson-velvet {
+  @include palette($crimson-velvet-primary, $crimson-velvet-background, $crimson-velvet-icons, $crimson-velvet-shadow);
+  @include shadow($crimson-velvet-shadow);
+}
+
+.amethyst-glow {
+  @include palette($amethyst-glow-primary, $amethyst-glow-background, $amethyst-glow-icons, $amethyst-glow-shadow);
+  @include shadow($amethyst-glow-shadow);
+}
+
+.ivory-elegance {
+  @include palette($ivory-elegance-primary, $ivory-elegance-background, $ivory-elegance-icons, $ivory-elegance-shadow);
+  @include shadow($ivory-elegance-shadow);
+}
+
+.royal-indigo {
+  @include palette($royal-indigo-primary, $royal-indigo-background, $royal-indigo-icons, $royal-indigo-shadow);
+  @include shadow($royal-indigo-shadow);
+}
+
+.golden-sand {
+  @include palette($golden-sand-primary, $golden-sand-background, $golden-sand-icons, $golden-sand-shadow);
+  @include shadow($golden-sand-shadow);
+}
+
+.mystic-forest {
+  @include palette($mystic-forest-primary, $mystic-forest-background, $mystic-forest-icons, $mystic-forest-shadow);
+  @include shadow($mystic-forest-shadow);
+}
+
+.ocean-breeze {
+  @include palette($ocean-breeze-primary, $ocean-breeze-background, $ocean-breeze-icons, $ocean-breeze-shadow);
+  @include shadow($ocean-breeze-shadow);
+}
+
+//aspecto del timer por defecto / default
+$bg: #d9a74a4a;
+$text-align: center;
+$max-width: 300px;
+$margin: 20px auto;
+$border-radius: 6px;
+$padding: 10px;
+$font-family: sans-serif;
+$margin-p: 0;
+$padding-p: 5px 0 15px 0;
+$grid-template-columns: repeat(4, calc(25% - 8px));
+$grid-column-gap: 10px;
+$margin-description: 0 0 0 2.5em;
+$font-description: normal 14px sans-serif;
+$letter-spacing: -5px;
+$position: relative;
+$margin-times: 0 0 0 0.8em;
+$font-times: normal 50px courier, sans-serif;
+$img-width: 30px;
+$img-height: 30px;
+$box-shadow: 2px 6px 9px 2px rgba($bg, 0.24);
+$font-size: 1.1em;
+$padding-span: 10px;
+$border-radius-span: 50%;
+$margin-left-span: 1em;
+$media-max-width: 430px;
+$media-margin: 20px;
+$margin-left-ml: 1.2em;
+$font-size-hover: 18px;
+$select-box-shadow:  2px 6px 9px 2px #d9a74a3e;
+$select-margin: 0;
+$select-padding: 12px;
+$border-radius-select: 50%;
+$span-i-font-size:1.1em;
+$i-padding:10px; 
+$border-radius-i:50% ;
+.default {
+  @include plantilla(
+    $text-align, $max-width, $margin, $border-radius, $padding, $font-family,
+    $margin-p,$padding-p, $grid-template-columns, $grid-column-gap, $margin-description,
+    $font-description, $letter-spacing, $position, $margin-times, $font-times,
+    $img-width, $img-height, $box-shadow, $font-size, $padding-span,
+    $border-radius-span, $margin-left-span, $media-max-width, $media-margin,
+    $margin-left-ml, $font-size-hover, $select-box-shadow, $select-margin,
+    $select-padding, $span-i-font-size, $i-padding, $border-radius-i
+  );
+}
+
+//aspecto del timer por defecto con contenedor abierto / default-controllers-openned
+.default-controllers-openned{
+  @extend .default;
+
+  .d-none{
+    @extend .default ;
+    display: block !important;
   }
+}
 
+//aspecto del timer por valtimmer
+$text-align1: center;
+$max-width1: 350px;
+$margin1: 0px auto;
+$border-radius1: 6px;
+$padding1: 0 10px;
+$font-family1: vardana;
+$margin-p1: 5px 0 15px 0;
+$padding-p1: 5px 0 15px 0;
+$grid-template-columns1: repeat(4, calc(25% - 8px));
+$grid-column-gap1: 10px;
+$margin-description1: 0 0 0 2.5em;
+$font-description1: normal 14px vardana;
+$letter-spacing1: -5px;
+$position1: relative;
+$margin-times1: 0 0 50em 0;
+$font-times1: normal 50px courier, sans-serif;
+$img-width1: 30px;
+$img-height1: 30px;
+$box-shadow1: 2px 6px 9px 2px rgba($bg, 0.24);
+$font-size1: 1.1em;
+$padding-span1: 10px;
+$border-radius-span1: 50%;
+$margin-left-span1: 1em;
+$media-max-width1: 430px;
+$media-margin1: 20px;
+$margin-left-ml1: 1.2em;
+$font-size-hover1: 18px;
+$select-box-shadow1:  2px 6px 9px 2px #d9a74a3e;
+$select-margin1: 0;
+$select-padding1: 12px;
+$border-radius-select1: 50%;
+$span-i-font-size1:1.1em;
+$i-padding1:10px; 
+$border-radius-i1:50% ;
+.strambothic_theme{
+  @include plantilla(
+    $text-align1, $max-width1, $margin1, $border-radius1, $padding1, $font-family1,
+    $margin-p1, $padding-p1, $grid-template-columns1, $grid-column-gap1, $margin-description1,
+    $font-description1, $letter-spacing1, $position1, $margin-times1, $font-times1,
+    $img-width1, $img-height1, $box-shadow1, $font-size1, $padding-span1,
+    $border-radius-span1, $margin-left-span1, $media-max-width1, $media-margin1,
+    $margin-left-ml1, $font-size-hover1, $select-box-shadow1, $select-margin1,
+    $select-padding1, $span-i-font-size1, $i-padding1, $border-radius-i1
+  );
   .wrapper {
-    .description,
-    .times {
-      display: grid;
-      grid-template-columns: repeat(4, calc(25% - 8px));
-      grid-column-gap: 10px;
+    .times{
+      margin-left: 150px;
+      margin-bottom: 15em;
     }
 
-    .description {
-      > p {
-        margin: 0;
-        margin-left: 2.5em;
-        font: normal 14px sans-serif;
-      }
-    }
-
-    .description1 {
-      @extend .description;
-      grid-template-columns: repeat(4, calc(26% - 8px));
-    }
-
-    .times {
-      p {
-        letter-spacing: -5px;
-        position: relative;
-        margin: 0;
-        margin-left: 0.8em;
-        font: normal 50px courier, sans-serif;
-
-        ::ng-deep img {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 30px;
-          display: block;
-          height: 30px;
-        }
-      }
-    }
-  }
+  }  
 }
 
-$bg: #d9a74a;
-
-.selected {
-  @extend .count-down-timer;
-  background-color: $bg;
-  box-shadow: 2px 6px 9px 2px #d9a74a3e;
-  margin: 0;
-  padding: 12px;
-  $color: color-contrast($bg);
-  color: $color;
-
-  span {
-    i {
-      font-size: 1.1em;
-      background-color: $color;
-      $color: color-contrast($color);
-      color: $color;
-      padding: 10px;
-      border-radius: 50%;
-
-      &.ml {
-        margin-left: 1em;
-      }
-    }
-  }
-}
 
 @media screen and (max-width: 430px) {
   .count-down-timer {

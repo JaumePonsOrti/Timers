@@ -1,4 +1,4 @@
-<div class="count-down-timer " (click)="desplegar()">
+<div [ngClass]="type + ' ' + palette" (click)="desplegar()">
     <p class="nombre" (click)="open('autofocus')">{{configTimer.nombre}} </p>
     <div class="wrapper">
       <div class="description1 text-center" *ngIf="configTimer.status==='stop'">
@@ -12,7 +12,13 @@
         <p>Minutes</p>
         <p>Seconds</p>
       </div>
-      <app-timer-picker *ngIf="configTimer.status==='stop'" (salida)="actualizarConfigTimer($event)"></app-timer-picker>
+      <app-timer-picker
+        class="picker"
+        *ngIf="configTimer.status==='stop'" 
+        (salida)="actualizarConfigTimer($event)" 
+        [active_button_background]="active_button_background"
+      >
+      </app-timer-picker>
   
       <div class="times text-center" *ngIf="configTimer.status!=='stop'" >
         <p #hours > {{configTimer.hour}}</p>
