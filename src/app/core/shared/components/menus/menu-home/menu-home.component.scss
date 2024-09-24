@@ -79,12 +79,32 @@
 
 
 @mixin palette($primary, $background, $icons, $shadow) {
-    background-color: $primary !important;
-    color: $background !important;
+    background-color: $background !important;
+    color: $primary ;
 
-    $blacnes :  darken($primary, 55%);
+    $blacnes :  lighten($primary, 40%)!important;
     .text-secondary{
-        color:  $blacnes !important;
+        color:  $blacnes ;
+    }
+
+    $color : contrast($primary);
+    $hover_color : lighten($primary,5%);
+    $hover: lighten($primary, 25%);
+
+    .btn-personalized {
+      background-color: $primary !important;
+      --bs-btn-font-weight: 400;
+      --bs-btn-color: $color;
+      --bs-btn-bg: $primary !important;
+      --bs-btn-border-color: $primary;
+      --bs-btn-border-radius: .5rem;
+      --bs-btn-hover-color: $hover_color;
+      --bs-btn-hover-bg: $hover;
+      --bs-btn-hover-border-color: #{shade-color($hover, 10%)};
+      --bs-btn-focus-shadow-rgb: $hover;
+      --bs-btn-active-color: darken($hover,10%);
+      --bs-btn-active-bg: #{shade-color($yellow, 20%)};
+      --bs-btn-active-border-color: #{shade-color($yellow, 20%)};
     }
   }
   
